@@ -31,6 +31,7 @@ function (SetCompilerOptions target ac_version)
 endfunction ()
 
 set (API_DEVKIT_DIR $ENV{AC_API_DEVKIT_DIR})
+message (STATUS "API_DEVKIT_DIR: ${API_DEVKIT_DIR}")
 
 if (GITHUB_BUILD)
 	include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
