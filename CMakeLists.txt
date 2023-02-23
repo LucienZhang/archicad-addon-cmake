@@ -31,12 +31,15 @@ function (SetCompilerOptions target ac_version)
 endfunction ()
 
 set (API_DEVKIT_DIR $ENV{AC_API_DEVKIT_DIR})
-message (STATUS "API_DEVKIT_DIR: ${API_DEVKIT_DIR}")
+message (STATUS "DEBUG -- API_DEVKIT_DIR: ${API_DEVKIT_DIR}")
 
 if (GITHUB_BUILD)
 	include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
 	set (API_DEVKIT_DIR ${CONAN_ARCHICAD-APIDEVKIT_ROOT}/bin)
 endif ()
+
+message (STATUS "DEBUG -- GITHUB_BUILD: ${GITHUB_BUILD}")
+message (STATUS "DEBUG -- API_DEVKIT_DIR: ${API_DEVKIT_DIR}")
 
 set_property (GLOBAL PROPERTY USE_FOLDERS ON)
 
