@@ -4,6 +4,12 @@
 #include <GSNew.hpp>
 #include <GSMalloc.hpp>
 
+#if defined (__CLANG__)
+namespace std {
+    void *GS_realloc (void *userData, size_t newSize);
+}
+#endif
+
 #include <limits.h>
 #include <math.h>
 #include <stddef.h>
